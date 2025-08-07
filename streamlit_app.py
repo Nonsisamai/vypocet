@@ -51,7 +51,7 @@ if plan_saturday:
     upcoming_saturday = date.today() + timedelta((5 - date.today().weekday()) % 7)  # 5 = Saturday
     saturday_hours = st.slider("Koľko hodín budem robiť v sobotu?", 0, 16, 11)
     saturday_break = st.slider("Prestávka v sobotu (minúty):", 0, 60, 60, step=15)
-    saturday_total = round(((saturday_hours * 60 - saturday_break) / 60) * hourly_rate, 2)
+    saturday_total = round(((saturday_hours * 60) / 60) * hourly_rate, 2)
     
     if st.button("Pridať plánovanú sobotu"):
         st.session_state.work_log.append({
